@@ -1,8 +1,12 @@
-# ts-npm-template
+# juno
 
-[![Build Status](https://travis-ci.org/103cuong/ts-npm-template.svg?branch=master)](https://travis-ci.org/103cuong/ts-npm-template)
+👩‍🚀 Pretty logger for Node.
 
-A TypeScript template 🌼 for npm package
+## Usage
+
+```sh
+yarn add juno-js
+```
 
 ## License
 
