@@ -1,6 +1,6 @@
 {
   "name": "juno-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "👩‍🚀 Pretty logger for Node.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -21,7 +21,8 @@
     "build": "rm -rf lib && tsc -p tsconfig.build.json",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint --fix src/**/*.ts",
-    "prepublishOnly": "yarn lint & yarn test & yarn build"
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn lint & yarn test"
   },
   "lint-staged": {
     "*.ts": [
