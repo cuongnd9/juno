@@ -29,31 +29,39 @@ const getLogger = (level: Level = 'info', defaultMeta?: DefaultMeta) => {
   return logger;
 };
 
-const formatRest = (...rest: any[]) => {
+const formatRest = (environment = 'development') => (...rest: any[]) => {
   const flattenRest = flatten(rest);
-  flattenRest.forEach((element: any, index: number) => {
+  flattenRest.forEach((element, index) => {
     if (element instanceof Error) {
       flattenRest.splice(index, 1);
       flattenRest.push(`${element.name}: ${element.message}`);
-      // if (config.nodeEnv === 'development') {
-      //   flattenRest.push(element.stack);
-      // }
-      flattenRest.push(element.stack);
+      if (environment === 'development') {
+        flattenRest.push(element.stack);
+      }
     }
   });
   return flattenRest;
 };
 
-const logger = (defaultMeta?: DefaultMeta) => ({
-  error(...rest: any[]) {
-    getLogger('error', defaultMeta).error(formatRest(rest));
-  },
-  warn(...rest: any[]) {
-    getLogger('warn', defaultMeta).warn(formatRest(rest));
-  },
-  info(...rest: any[]) {
-    getLogger('info', defaultMeta).info(formatRest(rest));
-  },
-});
+/**
+ * Create a logger instance with 3 levels: error, warn and info.
+ *
+ * @param {string} environment A Node environment
+ */
+const logger = (environment = 'development') =>
+  /**
+   *  @param {object} defaultMeta Metadata can be the current path, component, group, service, layer, etc.
+   */
+  (defaultMeta?: DefaultMeta) => ({
+    error(...rest: any[]) {
+      getLogger('error', defaultMeta).error(formatRest(environment)(rest));
+    },
+    warn(...rest: any[]) {
+      getLogger('warn', defaultMeta).warn(formatRest(environment)(rest));
+    },
+    info(...rest: any[]) {
+      getLogger('info', defaultMeta).info(formatRest(environment)(rest));
+    },
+  });
 
 export { logger };
