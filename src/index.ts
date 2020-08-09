@@ -7,6 +7,13 @@ type DefaultMeta = {
   component?: string;
   fileName?: string;
 };
+type Options = {
+  environment?: string;
+};
+
+const globalOptions: Options = {
+  environment: 'development',
+};
 
 const getLogger = (level: Level = 'info', defaultMeta?: DefaultMeta) => {
   const { Console } = transports;
@@ -46,22 +53,18 @@ const formatRest = (environment = 'development') => (...rest: any[]) => {
 /**
  * Create a logger instance with 3 levels: error, warn and info.
  *
- * @param {string} environment A Node environment
+ * @param {object} defaultMeta Metadata can be the current path, component, group, service, layer, etc.
  */
-const logger = (environment = 'development') =>
-  /**
-   *  @param {object} defaultMeta Metadata can be the current path, component, group, service, layer, etc.
-   */
-  (defaultMeta?: DefaultMeta) => ({
+const logger = (defaultMeta?: DefaultMeta) => ({
     error(...rest: any[]) {
-      getLogger('error', defaultMeta).error(formatRest(environment)(rest));
+      getLogger('error', defaultMeta).error(formatRest(globalOptions.environment)(rest));
     },
     warn(...rest: any[]) {
-      getLogger('warn', defaultMeta).warn(formatRest(environment)(rest));
+      getLogger('warn', defaultMeta).warn(formatRest(globalOptions.environment)(rest));
     },
     info(...rest: any[]) {
-      getLogger('info', defaultMeta).info(formatRest(environment)(rest));
+      getLogger('info', defaultMeta).info(formatRest(globalOptions.environment)(rest));
     },
   });
 
-export { logger };
+export { logger, globalOptions };

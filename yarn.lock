@@ -1780,6 +1780,11 @@ detect-newline@^3.0.0:
   resolved "https://registry.yarnpkg.com/detect-newline/-/detect-newline-3.1.0.tgz#576f5dfc63ae1a192ff192d8ad3af6308991b651"
   integrity sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==
 
+diana-js@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/diana-js/-/diana-js-0.7.0.tgz#fe98d634bc41667a2bc2a70df397a3e14c39c762"
+  integrity sha512-o9KJWZOdyKSW3xnLzM2wab9F90EvxPESTjS5gEI1i2okdNpfbHOR+dzV1sqi1nVyZ2POiquX1SkwIi9v64qRjg==
+
 diff-sequences@^25.2.6:
   version "25.2.6"
   resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-25.2.6.tgz#5f467c00edd35352b7bca46d7927d60e687a76dd"

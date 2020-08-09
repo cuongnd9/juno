@@ -2,24 +2,22 @@
 
 👩‍🚀 Pretty logger for Node.
 
-## Installation
+## installation
 
 ```sh
 yarn add juno-js
 ```
 
-## Usage
+## usage
 
 ```typescript
-import { logger as baseLogger } from 'juno-js'
+import { logger, globalOptions } from 'juno-js';
 
-import { config } from '.'
-
-const logger = baseLogger(config.nodeEnv)
+globalOptions.environment = 'production'; // optional, default is development
 
 logger().info('Hi 🧕')
 ```
 
-## License
+## license
 
-MIT © [103cuong](https://github.com/103cuong)
+MIT © [Cuong Tran](https://github.com/103cuong)
