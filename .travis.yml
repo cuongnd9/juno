@@ -10,7 +10,8 @@ branches:
   - master
 
 install:
-  - npm install
+  - yarn
+  - yarn test
 
 cache:
   directories:
