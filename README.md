@@ -15,7 +15,14 @@ import { logger, globalOptions } from 'juno-js';
 
 globalOptions.environment = 'production'; // optional, default is development
 
-logger().info('Hi 🧕')
+logger.info('Hi 🧕');
+logger.info('Name 👨‍💻', 'Cuong Tran');
+logger.info('Age 🌳', '22', { layer: 'testing' }); // support defaultMeta (type DefaultMeta)
+// type DefaultMeta = {
+//   layer: string;
+//   component: string;
+//   fileName: string;
+// };
 ```
 
 ## license
