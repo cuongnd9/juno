@@ -8,4 +8,6 @@ it('test', async() => {
   expect(typeof logger.info).toEqual('function');
   logger.info('id', diana());
   logger.info('id', diana(), { layer: '__tests__' });
+  logger.error('undefined value', undefined); // FIXME: 🐛.
+  logger.error('null value', null);
 });
