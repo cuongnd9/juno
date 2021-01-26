@@ -1,19 +1,16 @@
 {
-  "name": "@103cuong/juno-js",
-  "version": "0.1.1",
+  "name": "juno-js",
+  "version": "0.1.2",
   "description": "👩‍🚀 Pretty logger for Node.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "repository": "https://github.com/103cuong/juno",
-  "author": "Nguyen Duy Cuong <103cuong@gmail.com>",
+  "author": "Kim Cuong <103cuong@gmail.com>",
   "keywords": [
-    "npm",
-    "typescript",
-    "template"
+    "logger",
+    "winston",
+    "4pet"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "files": [
     "lib/**/*"
   ],
@@ -53,9 +50,9 @@
     "jest": "^25.3.0",
     "lint-staged": "^10.1.3",
     "nodemon": "^2.0.3",
-    "ts-jest": "^25.3.1",
+    "ts-jest": "^26.4.4",
     "ts-node": "^8.4.1",
-    "typescript": "^3.8.3"
+    "typescript": "^4.1.3"
   },
   "dependencies": {
     "lodash": "^4.17.19",
